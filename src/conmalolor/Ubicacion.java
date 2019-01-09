@@ -11,10 +11,10 @@ package conmalolor;
  */
 public class Ubicacion {
 
-    String provincia;
-    String direccion;
-    String pais;
-    String ciudad;
+    private String provincia;
+    private String direccion;
+    private String pais;
+    private String ciudad;
 
     public Ubicacion(String provincia, String direccion, String pais, String ciudad) {
         this.provincia = provincia;
