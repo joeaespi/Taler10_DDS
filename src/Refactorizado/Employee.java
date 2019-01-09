@@ -3,21 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package conmalolor;
+package Refactorizado;
 
+import conmalolor.EmployeeType;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 
-public class Employee
+public abstract class Employee
 {   
-    private final float rmu = 386.0f;
+    protected final float rmu = (float) 386.0;
     //salario del employee
-    private float salary;
+    protected float salary;
     //porcentaje de bonus
-    private float bonusPercentage;    
+    protected float bonusPercentage;    
     //variable de tipo employeeType
-    private EmployeeType employeeType;    
+    protected EmployeeType employeeType;    
 
     public Employee(float salary, float bonusPercentage, EmployeeType employeeType)    
     {        
@@ -26,7 +27,8 @@ public class Employee
         this.employeeType = employeeType;    
     }    
     //calcula el salario dependiendo del tipo de trabajador y entrega el décimo correspondiente cada 2 meses
-    public float cs()
+    public abstract float cs();
+    /*
     {
         Date date = new Date();
         //Obtiene la hora local
@@ -49,6 +51,7 @@ public class Employee
         }
         return 0.0F;
     }
+*/
     //calcula el bonus anual
     public float CalculateYearBonus() 
     {

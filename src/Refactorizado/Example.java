@@ -3,10 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package conmalolor;
+package Refactorizado;
 
-import conmalolor.Cliente;
-import conmalolor.Employee;
 import java.util.List;
 
 
