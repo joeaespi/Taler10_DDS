@@ -10,16 +10,14 @@ public class Cliente {
     public String Nombre;
     public String Apellido;
     public String Cedula;
-    private String provincia;
-    private String pais;
-    private String ciudad;
-    private String direccion;
     private String telefono;
+    private Ubicacion ubicacion;
     
-    public Cliente(String Nombre, String Apellido, String Cedula) {
+    public Cliente(String Nombre, String Apellido, String Cedula, Ubicacion ubicacion) {
         this.Nombre = Nombre;
         this.Apellido = Apellido;
         this.Cedula = Cedula;
+        this.ubicacion= ubicacion;
     }
 
     public String getNombre() {
@@ -45,18 +43,5 @@ public class Cliente {
     public void setCedula(String Cedula) {
         this.Cedula = Cedula;
     }
-
-    public String mostrarLocation(){
-        String dir = pais + " - " + provincia + " - " + ciudad;
-        return  dir+ "\n" + direccion;
-    }
-    
-    public void setLocation(String nuevoPais, String ciudadnueva, String provinciaNueva, String direccionNueva){
-        pais = nuevoPais;
-        ciudad = ciudadnueva;
-        provincia = provinciaNueva;
-        direccion = direccionNueva;
-    }
-
     
 }
