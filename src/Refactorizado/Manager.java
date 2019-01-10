@@ -16,12 +16,10 @@ import java.util.Date;
  */
 public class Manager extends Employee{
     
-    public Manager(float salary, float bonusPercentage, EmployeeType employeeType) {
-        super(salary, bonusPercentage, employeeType);
+    public Manager(float salary, float bonusPercentage) {
+        super(salary, bonusPercentage);
     }
-
-    @Override
-    public float cs() {
+public float cs() {
         Date date = new Date();
         //Obtiene la hora local
         LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
@@ -33,7 +31,6 @@ public class Manager extends Employee{
         return month%2==0?valueM:valueM + rmu/12*2;
     }
 
-    @Override
     public float CalculateYearBonus() {
         return salary + salary * 1.0F;
     }
