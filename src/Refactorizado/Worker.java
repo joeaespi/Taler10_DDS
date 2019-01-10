@@ -15,12 +15,10 @@ import java.util.Date;
  * @author casa
  */
 public class Worker extends Employee {
-
-    public Worker(float salary, float bonusPercentage, EmployeeType employeeType) {
-        super(salary, bonusPercentage, employeeType);
+    public Worker(float salary, float bonusPercentage) {
+        super(salary, bonusPercentage);
     }
 
-    @Override
     public float cs() {
         Date date = new Date();
         //Obtiene la hora local
@@ -30,9 +28,7 @@ public class Worker extends Employee {
         return month%2==0?salary:salary + rmu/12*2;
     }
 
-    @Override
     public float CalculateYearBonus() {
         return 0;
     }
-    
 }
