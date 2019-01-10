@@ -17,18 +17,11 @@ public abstract class Employee
     protected float salary;
     //porcentaje de bonus
     protected float bonusPercentage;    
-    //variable de tipo employeeType
-    protected EmployeeType employeeType;    
 
-    public Employee(float salary, float bonusPercentage, EmployeeType employeeType)    
+    public Employee(float salary, float bonusPercentage)    
     {        
         this.salary = salary;        
         this.bonusPercentage = bonusPercentage;        
-        this.employeeType = employeeType;    
-    }    
-    //calcula el salario dependiendo del tipo de trabajador y entrega el décimo correspondiente cada 2 meses
-    public abstract float cs();
-    
-    //calcula el bonus anual
-    public abstract float CalculateYearBonus();
+           
+    }  
 }
