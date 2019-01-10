@@ -11,79 +11,64 @@ import java.util.List;
 
 
 public class Example {
-    
     public List<Cliente> clientes;
     public List<Employee> empleados;
-    
-    public void MostrarInformacion(Cliente cliente){
-        if(cliente.Nombre.equals("") && cliente.Nombre.length()> 16){
-                System.out.println("ingreso de nombre incorrecto");
-        }else{
-            System.out.println("ingreso de nombre correcto");
 
-        }
-        if(cliente.Apellido.equals("") && cliente.Apellido.length()> 16){
-            System.out.println("ingreso de apellido incorrecto");
-        }else{
-            System.out.println("ingreso de apellido correcto");
+    public void MostrarInformacion(Cliente cliente) {
 
-        }
-        if(!cliente.Cedula.equals("") && cliente.Cedula.length()< 10){
-            System.out.println("ingreso de cedula incorrecto");
-        }else{
-            System.out.println("ingreso de cedula correcto");
+        validarInformacion(cliente.getNombre(), cliente.getApellido(), cliente.getCedula());
 
-        }
-        System.out.println("Nombre: " + cliente.Nombre + ", Apellido: " + cliente.Apellido + ", con numero de cedula: " + cliente.Cedula );
-        
+        System.out.println("Nombre: " + cliente.Nombre + ", Apellido: " + cliente.Apellido + ", con numero de cedula: " + cliente.Cedula);
     }
-    
-    public void GuardarCliente(String Nombre, String Apellido, String Cedula){
-        if(Nombre.equals("") && Nombre.length()> 16){
-                System.out.println("ingreso de nombre incorrecto");
-        }else{
-            System.out.println("ingreso de nombre correcto");
 
-        }
-        if(Apellido.equals("") && Apellido.length()> 16){
-            System.out.println("ingreso de apellido incorrecto");
-        }else{
-            System.out.println("ingreso de apellido correcto");
+    public void GuardarCliente(String Nombre, String Apellido, String Cedula) {
 
-        }
-        if(!Cedula.equals("") && Cedula.length()< 10){
-            System.out.println("ingreso de cedula incorrecto");
-        }else{
-            System.out.println("ingreso de cedula correcto");
+        validarInformacion(Nombre, Apellido, Cedula);
 
-        }
         Cliente cliente = new Cliente(Nombre, Apellido, Cedula);
         this.clientes.add(cliente);
-        System.out.println(Nombre +" " + Apellido + "ha sido agregado como nuevo cliente");
-        
+        System.out.println(Nombre + " " + Apellido + "ha sido agregado como nuevo cliente");
+
+    }
+
+    public void validarInformacion(String Nombre, String Apellido, String Cedula) {
+
+        if (comparar(Nombre)) {
+            System.out.println("ingreso de nombre incorrecto");
+        } else {
+            System.out.println("ingreso de nombre correcto");
+
+        }
+        if (comparar(Apellido)) {
+            System.out.println("ingreso de apellido incorrecto");
+        } else {
+            System.out.println("ingreso de apellido correcto");
+
+        }
+        if (!compararCI(Cedula)) {
+            System.out.println("ingreso de cedula incorrecto");
+        } else {
+            System.out.println("ingreso de cedula correcto");
+
+        }
+
+    }
+
+    private boolean comparar(String datos) {
+        if ("".equals(datos) && datos.length() > 16) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean compararCI(String ci) {
+
+        if ("".equals(ci) && ci.length() < 10) {
+            return true;
+        }
+        return false;
     }
     
-    public void validarInformacion(String Nombre, String Apellido, String Cedula ){
-        if(Nombre.equals("") && Nombre.length()> 16){
-            System.out.println("ingreso de nombre incorrecto");
-        }else{
-            System.out.println("ingreso de nombre correcto");
-            
-        }
-        if(Apellido.equals("") && Apellido.length()> 16){
-            System.out.println("ingreso de apellido incorrecto");
-        }else{
-            System.out.println("ingreso de apellido correcto");
-            
-        }
-        if(!Cedula.equals("") && Cedula.length()< 10){
-            System.out.println("ingreso de cedula incorrecto");
-        }else{
-            System.out.println("ingreso de cedula correcto");
-            
-        }
-        
-    }
     
     
 }
