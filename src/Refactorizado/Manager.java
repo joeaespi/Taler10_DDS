@@ -32,6 +32,11 @@ public class Manager extends Employee{
         
         return month%2==0?valueM:valueM + rmu/12*2;
     }
+
+    @Override
+    public float CalculateYearBonus() {
+        return salary + salary * 1.0F;
+    }
     
     
 }
